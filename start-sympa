@@ -2,5 +2,10 @@
    
 export PERL5LIB="/home/sympa/bin:/home/sympa/lib/perl5"
 /home/sympa/write-sympa-conf
-/home/sympa/bin/sympa.pl || sleep 6000
+
+# running health check
+/home/sympa/bin/sympa.pl --health_check
+
+# running daemon in the foreground
+/home/sympa/bin/sympa_msg.pl --foreground
 
