@@ -41,15 +41,16 @@ RUN apt-get update && apt-get install -y perl libdbd-pg-perl libdbd-mysql-perl p
 
 # File /usr/sbin/sendmail does not exist or is not executable
 RUN DEBIAN_FRONTEND=noninteractive apt-get install nullmailer
+
+# create sympa user
+RUN adduser --disabled-password --gecos '' sympa
         
-RUN mkdir /home/sympa /etc/sympa /etc/mail
+RUN mkdir /etc/sympa /etc/mail
 COPY --from=builder /etc/sympa/ /etc/sympa
 COPY --from=builder /etc/mail/ /etc/mail     
 COPY --from=builder /home/sympa/ /home/sympa/
 WORKDIR /home/sympa
 
-# create sympa user
-RUN adduser --disabled-password --gecos '' sympa
 USER sympa
 
 CMD ["/home/sympa/start-sympa"]
