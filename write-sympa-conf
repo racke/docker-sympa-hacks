@@ -1,0 +1,15 @@
+#! /bin/bash -e
+
+export PATH="/home/sympa/bin:$PATH"
+export PERL5LIB="/home/sympa/bin:/home/sympa/lib/perl5"
+
+SYMPA_CONF=${SYMPA_CONF:-/etc/sympa/sympa.conf}
+
+tpage --define db_type="$SYMPA_DB_TYPE" \
+      --define db_name="$SYMPA_DB_NAME" \
+      --define db_host="$SYMPA_DB_HOST" \
+      --define db_user="$SYMPA_DB_USER" \
+      --define db_pass="$SYMPA_DB_PASS" \
+      sympa.conf.tt2 > $SYMPA_CONF
+
+   

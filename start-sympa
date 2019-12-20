@@ -1,0 +1,6 @@
+#! /bin/bash -e
+   
+export PERL5LIB="/home/sympa/bin:/home/sympa/lib/perl5"
+/home/sympa/write-sympa-conf
+/home/sympa/bin/sympa.pl || sleep 6000
+
