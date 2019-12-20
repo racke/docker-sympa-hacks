@@ -32,6 +32,8 @@ RUN mkdir /etc/mail && touch /etc/mail/sympa_aliases && chown sympa:sympa /etc/m
 # Copy helper scripts for creating Sympa configuration and startup
 COPY start-sympa write-sympa-conf sympa.conf.tt2 /home/sympa/
 
+RUN chown -R sympa:sympa /home/sympa
+
 FROM debian:buster
 
 # Replace base Perl and add database drivers
