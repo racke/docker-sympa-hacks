@@ -4,7 +4,7 @@ FROM debian:buster as builder
 RUN apt-get update && apt-get install -y build-essential autoconf gettext curl
 
 # Download the source file
-ENV SYMPA_VERSION 6.2.48
+ENV SYMPA_VERSION 6.2.50
 ENV SYMPA_BINARY ${SYMPA_VERSION}.tar.gz
 
 RUN curl -LJO https://github.com/sympa-community/sympa/archive/${SYMPA_BINARY} \
