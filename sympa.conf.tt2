@@ -6,3 +6,7 @@ db_name [% db_name %]
 db_host [% db_host %]
 db_user [% db_user %]
 db_passwd [% db_pass %]
+
+[% IF sendmail %]
+sendmail [% sendmail %]
+[% END %]

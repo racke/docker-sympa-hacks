@@ -36,8 +36,8 @@ RUN chown -R sympa:sympa /home/sympa
 
 FROM debian:buster
 
-# Replace base Perl and add database drivers
-RUN apt-get update && apt-get install -y perl libdbd-pg-perl libdbd-mysql-perl procps
+# Replace base Perl, add database drivers and install msmtp
+RUN apt-get update && apt-get install -y perl libdbd-pg-perl libdbd-mysql-perl msmtp
 
 # File /usr/sbin/sendmail does not exist or is not executable
 RUN DEBIAN_FRONTEND=noninteractive apt-get install nullmailer
