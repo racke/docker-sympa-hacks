@@ -1,3 +1,3 @@
 #! /bin/bash
 
-docker build -t sympa:6.2.48 .
+docker build -t sympa:6.2.52 .
