@@ -40,7 +40,7 @@ FROM debian:buster
 RUN apt-get update && apt-get install -y perl libdbd-pg-perl libdbd-mysql-perl msmtp
 
 # File /usr/sbin/sendmail does not exist or is not executable
-RUN DEBIAN_FRONTEND=noninteractive apt-get install nullmailer
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y nullmailer
 
 # create sympa user
 RUN adduser --disabled-password --gecos '' sympa
