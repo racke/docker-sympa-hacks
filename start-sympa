@@ -3,6 +3,9 @@
 export PERL5LIB="/home/sympa/bin:/home/sympa/lib/perl5"
 /home/sympa/write-sympa-conf
 
+# generate mstmp config file
+[ ! -z "$SYMPA_MAIL_HOST" ] && /home/sympa/write-msmtp-conf
+
 # running health check
 /home/sympa/bin/sympa.pl --health_check
 

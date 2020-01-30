@@ -30,7 +30,7 @@ RUN cpanm -L /home/sympa/ --installdeps --notest .
 RUN mkdir /etc/mail && touch /etc/mail/sympa_aliases && chown sympa:sympa /etc/mail/sympa_aliases
         
 # Copy helper scripts for creating Sympa configuration and startup
-COPY start-sympa write-sympa-conf sympa.conf.tt2 /home/sympa/
+COPY start-sympa write-sympa-conf sympa.conf.tt2 write-msmtp-conf msmtprc.tt2 /home/sympa/
 
 RUN chown -R sympa:sympa /home/sympa
 

@@ -1,0 +1,9 @@
+defaults
+logfile /home/sympa/msmtp.log
+
+account smtp
+host [% mail_host %]
+[% IF mail_port %]port [% mail_port %][% END %]
+[% IF mail_from %]from [% mail_from %][% END %]
+
+account default : smtp

@@ -1,0 +1,11 @@
+#! /bin/bash -e
+
+export PATH="/home/sympa/bin:$PATH"
+export PERL5LIB="/home/sympa/lib/perl5"
+
+MSMTP_CONF=${MSMTP_CONF:-/home/sympa/.msmtprc}
+
+tpage --define mail_host="$SYMPA_MAIL_HOST" \
+      --define mail_port="$SYMPA_MAIL_PORT" \
+      --define mail_from="$SYMPA_MAIL_FROM" \
+      msmtprc.tt2 > $MSMTP_CONF
