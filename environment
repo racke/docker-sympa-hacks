@@ -1,0 +1,17 @@
+# Postgres container
+POSTGRES_USER=sympa
+POSTGRES_DB=sympa
+POSTGRES_PASSWORD=sympa
+
+# Postfix container
+ALLOWED_SENDER_DOMAINS=lists.example.com
+
+# Database setup
+SYMPA_DB_TYPE=Pg
+SYMPA_DB_HOST=database
+SYMPA_DB_USER=sympa
+SYMPA_DB_PASS=sympa
+SYMPA_DB_NAME=sympa
+SYMPA_MAIL_HOST=postfix
+SYMPA_MAIL_PORT=587
+SYMPA_MAIL_FROM=sympa@lists.example.com
