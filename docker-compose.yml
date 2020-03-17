@@ -22,6 +22,8 @@ services:
     env_file:
       - ./environment
     restart: always
+  dancer:
+    image: dancer:0.0.1
 
 volumes:
   postgres-data: {}

@@ -1,0 +1,18 @@
+FROM debian:buster
+
+# Create Dancer user
+RUN adduser --disabled-password --gecos '' dancer
+
+# Install Dancer, Plack and Starman
+RUN apt-get update && apt-get install -y build-essential libdancer2-perl \
+libplack-perl starman
+
+# Optional stuff
+RUN apt-get install -y libv-perl
+
+WORKDIR /home/dancer
+
+COPY start-dancer /home/dancer/start-dancer
+USER dancer
+
+CMD ["/home/dancer/start-dancer"]
