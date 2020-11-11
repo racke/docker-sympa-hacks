@@ -7,6 +7,10 @@ db_host [% db_host %]
 db_user [% db_user %]
 db_passwd [% db_pass %]
 
+[% IF log_level %]
+log_level [% log_level %]
+[% END %]
+
 [% IF sendmail %]
 sendmail [% sendmail %]
 [% END %]

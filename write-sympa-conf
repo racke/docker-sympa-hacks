@@ -10,6 +10,7 @@ tpage --define db_type="$SYMPA_DB_TYPE" \
       --define db_host="$SYMPA_DB_HOST" \
       --define db_user="$SYMPA_DB_USER" \
       --define db_pass="$SYMPA_DB_PASS" \
+      --define log_level="$SYMPA_LOG_LEVEL" \
       --define sendmail="$SYMPA_MAIL_SENDMAIL" \
       sympa.conf.tt2 > $SYMPA_CONF
 
